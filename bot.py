@@ -40,8 +40,8 @@ def hello(message):
         elif message.text == '😊 Как дела?':
 
             markup = types.InlineKeyboardMarkup(row_width=2)
-            item4 = types.InlineKeyboardButton('Хорошо', callback_data='good')
-            item5 = types.InlineKeyboardButton('Не очень', callback_data='bad')
+            item4 = types.InlineKeyboardButton('Хорошо', callback_data='good', reply_markup=types.ReplyKeyboardRemove())
+            item5 = types.InlineKeyboardButton('Не очень', callback_data='bad', reply_markup=types.ReplyKeyboardRemove())
 
             markup.add(item4, item5)
 
