@@ -36,7 +36,7 @@ def hello(message):
                          parse_mode='html')
     elif message.chat.type == 'private':
         if message.text == '🎲 Рандомное число':
-            bot.send_message(message.chat.id, str(random.randint(0, 100)), reply_markup=types.ReplyKeyboardRemove())
+            bot.send_message(message.chat.id, str(random.randint(0, 100)))
         elif message.text == '😊 Как дела?':
 
             markup = types.InlineKeyboardMarkup(row_width=2)
@@ -47,7 +47,7 @@ def hello(message):
 
             bot.send_message(message.chat.id, 'Отлично, как у тебя? ;)', reply_markup=markup)
         elif message.text == '😱 Супрималор!':
-            bot.send_message(message.chat.id, 'Щёрт, ты шо курил?))', reply_markup=types.ReplyKeyboardRemove())
+            bot.send_message(message.chat.id, 'Щёрт, ты шо курил?))')
 
 
         else:
@@ -64,7 +64,7 @@ def callback_inline(call):
 
             #remove inline buttons
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='😊 Как дела?',
-                                  reply_markup=types.ReplyKeyboardRemove())
+                                  reply_markup=None)
 
             # #show alert
             # bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
