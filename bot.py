@@ -40,8 +40,8 @@ def hello(message):
         elif message.text == '😊 Как дела?':
 
             markup = types.InlineKeyboardMarkup(row_width=2)
-            item4 = types.InlineKeyboardButton('Хорошо', callback_data='good', reply_markup=types.ReplyKeyboardRemove())
-            item5 = types.InlineKeyboardButton('Не очень', callback_data='bad', reply_markup=types.ReplyKeyboardRemove())
+            item4 = types.InlineKeyboardButton('Хорошо', callback_data='good')
+            item5 = types.InlineKeyboardButton('Не очень', callback_data='bad')
 
             markup.add(item4, item5)
 
@@ -64,7 +64,7 @@ def callback_inline(call):
 
             #remove inline buttons
             bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='😊 Как дела?',
-                                  reply_markup=None)
+                                  reply_markup=types.ReplyKeyboardRemove())
 
             # #show alert
             # bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
